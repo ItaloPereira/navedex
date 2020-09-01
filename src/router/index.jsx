@@ -10,9 +10,9 @@ import PrivateRoute from './PrivateRoute';
 const Router = () => (
   <BrowserRouter>
     <Switch>
-      <Route path="/signin" component={SignIn} exact />
-      <Route path="/teste" component={Teste} exact />
-      <PrivateRoute path="/" component={Home} exact />
+      <Route path="/entrar" component={SignIn} />
+      <Route path="/teste" component={Teste} />
+      <PrivateRoute path="/" component={Home} />
     </Switch>
   </BrowserRouter>
 );

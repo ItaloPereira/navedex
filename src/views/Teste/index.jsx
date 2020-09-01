@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import Page from '@components/templates/Page';
+
 const SignIn = () => {
   return (
-    <Link to="/signin">signin</Link>
+    <Page title="Teste" description="Teste">
+      <Link to="/entrar">signin</Link>
+    </Page>
   )
 }
 
