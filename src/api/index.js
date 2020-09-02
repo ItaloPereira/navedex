@@ -30,6 +30,7 @@ class API {
     try {
       return await this.service(options);
     } catch(error) {
+      // eslint-disable-next-line no-console
       console.error(error.status, error.statusText);
       throw error;
     }
