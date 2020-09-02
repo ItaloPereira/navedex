@@ -7,7 +7,7 @@ import { StyledButton } from './style';
 
 const Button = ({ children, htmlType = 'button', type, loading, disabled }) => {
   return (
-    <StyledButton type={htmlType} colorSchema={type} loading={loading} disabled={disabled}>
+    <StyledButton type={htmlType} colorSchema={type} loading={loading ? 1 : 0} disabled={disabled}>
       <Loader size="small" colorSchema={type} />
       <span>{children}</span>
     </StyledButton>

@@ -8,14 +8,15 @@ export const isAuthenticated = () => {
 }
 
 export const signin = async ({ email, password }) => {
-  const { data, status } = await AuthService.signin({
+  const { data } = await AuthService.signin({
     email,
     password,
   });
 
-  if (status !== 201) {
-    throw new Error(status);
-  }
+  cookie.set(tokenName, data.token, { expires: 1 });
+};
 
-  cookie.set(tokenName, data.accessToken, { expires: 1 });
+export const logout = () => {
+  cookie.remove(tokenName);
+  window.location.reload();
 };

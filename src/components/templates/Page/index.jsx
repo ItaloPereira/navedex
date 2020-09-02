@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import PageHead from '@components/molecules/PageHead';
+import NavBar from '@components/molecules/NavBar';
 
 import { Viewport } from './style';
 
@@ -13,7 +14,7 @@ const Page = ({ children, showNav, title, description }) => {
         description={description}
       />
       {showNav && (
-        'NavBar'
+        <NavBar />
       )}
       {children}
     </Viewport>

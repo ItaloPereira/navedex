@@ -45,7 +45,7 @@ const Loader = ({ size, colorSchema }) => (
 
 Loader.propTypes = {
   size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge']),
-  colorSchema: PropTypes.oneOf(['light', 'dark']),
+  colorSchema: PropTypes.oneOf(['primary', 'secondary']),
 };
 
 Loader.defaultProps = {

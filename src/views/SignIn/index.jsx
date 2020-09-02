@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 
 import { signin } from '@utils/auth';
 import { getErrorMessageByRequest } from '@modules/errors';
+import patterns from '@modules/patterns';
 
 import Page from '@components/templates/Page';
 import Button from '@components/molecules/Button';
@@ -54,7 +55,7 @@ const SignIn = () => {
               defaultValue=""
               control={control}
               rules={{
-                pattern: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                pattern: patterns.email,
                 required: true,
               }}
               error={errors.email}
