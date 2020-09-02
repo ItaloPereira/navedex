@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 
 import PageHead from '@components/molecules/PageHead';
 
+import { Viewport } from './style';
+
 const Page = ({ children, showNav, title, description }) => {
   return (
-    <div>
+    <Viewport>
       <PageHead
         title={title}
         description={description}
@@ -14,7 +16,7 @@ const Page = ({ children, showNav, title, description }) => {
         'NavBar'
       )}
       {children}
-    </div>
+    </Viewport>
   );
 }
 
