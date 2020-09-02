@@ -1,5 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
+
+import { signin } from '@utils/auth';
+import { getErrorMessageByRequest } from '@modules/errors';
 
 import Page from '@components/templates/Page';
 import Button from '@components/molecules/Button';
@@ -14,10 +19,24 @@ import {
 } from './style';
 
 const SignIn = () => {
+  const history = useHistory();
   const { handleSubmit, control, errors } = useForm();
+  const notifyError = (msg) => toast.error(msg);
 
-  function onSubmit() {
-    // console.log(data);
+  const [loading, setLoading] = useState(false);
+
+  async function onSubmit(data) {
+    setLoading(true);
+
+    try {
+      await signin(data);
+      history.push('/');
+    } catch(err) {
+      const errorMessage = getErrorMessageByRequest(err);
+      notifyError(errorMessage);
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -52,7 +71,7 @@ const SignIn = () => {
               type="password"
             />
 
-            <Button htmlType="submit">Entrar</Button>
+            <Button htmlType="submit" loading={loading} disabled={loading}>Entrar</Button>
           </Form>
         </PageWrapper>
       </PageContainer>
