@@ -50,7 +50,7 @@ Loader.propTypes = {
 
 Loader.defaultProps = {
   size: 'medium',
-  colorSchema: 'dark',
+  colorSchema: 'primary',
 };
 
 export default Loader;

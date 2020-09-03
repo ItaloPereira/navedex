@@ -1,13 +1,16 @@
 import React from 'react';
-import GlobalStyles from '@components/GlobalStyles';
 
+import GlobalStyles from '@components/GlobalStyles';
+import { AppProvider } from '@context/appContext.js';
 import Router from './router';
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      <Router />
+      <AppProvider>
+        <Router />
+      </AppProvider>
     </>
   );
 

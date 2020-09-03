@@ -12,7 +12,7 @@ class API {
   }
 
   async request(method, url, config = {}) {
-    const { headers = {}, data, params, signed = false } = config;
+    const { headers = {}, data, params } = config;
 
     const options = {
       headers,
@@ -21,17 +21,21 @@ class API {
       url,
       method,
     };
-
-    if (signed) {
-      const token = config.token || cookie.get(tokenName);
-      options.headers.Authorization = token ? `Bearer ${token}` : '';
-    }
+    
+    const token = config.token || cookie.get(tokenName);
+    options.headers.Authorization = token ? `Bearer ${token}` : '';
 
     try {
       return await this.service(options);
     } catch(error) {
       // eslint-disable-next-line no-console
       console.error(error.status, error.statusText);
+
+      if (error.status === 401) {
+        cookie.remove(tokenName);
+        window.location.reload();
+      };
+      
       throw error;
     }
   }

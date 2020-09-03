@@ -25,3 +25,17 @@ export const LabelMediumHeight = `
   font-size: 14px;
   line-height: 18px;
 `;
+
+export const LabelLarge = `
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 18px;
+`;
+
+export const HeadingLarge = `
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+`;

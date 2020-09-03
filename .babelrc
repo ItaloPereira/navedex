@@ -19,6 +19,7 @@
           "@views": "./src/views",
           "@utils": "./src/utils",
           "@assets": "./src/assets",
+          "@context": "./src/context",
           "@api": "./src/api",
           "@src": "./src"
         }
