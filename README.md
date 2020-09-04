@@ -6,7 +6,7 @@
 - [Instalação](#Instalação)
 - [Tecnologias](#Tecnologias)
 - [Práticas](#Práticas)
-- [Próximos Passos](#PróximosPassos)
+- [Features](#Features)
 - [API](#API)
 - [Figma](#UI)
 - [Desafio](#Desafio)
@@ -52,7 +52,7 @@ Então o browser irá abrir uma porta disponível no seu brawser.
 
 - As mensagens de erro foram centralizadas em um único arquivo para não haver mensagens de erro duplicadas e aumentar a facilidade na hora de criar novas.
 
-## Próximos Passos
+## Features
 
 Possíveis features a se considerar são:
 
@@ -81,6 +81,6 @@ Encontre o Naver lendário na home. (Para resetar apague a variável `RARE_NAVER
 
 Me encontre no [LinkedIn](https://www.linkedin.com/in/matheus-cruz-54204b185/).
 
-## License
+## Licensa
 
 Esse projeto foi feito usando a [MIT License](https://github.com/matheus-neves/navedex/blob/master/LICENSE.md).
