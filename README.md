@@ -21,13 +21,13 @@ O padrão de estrutura utilizado foi o [Atomic Design](https://atomicdesign.brad
 
 ## Instalação
 
-Primeiro, comece rodando o seguinte comando no terminal:
+Primeiro, comece rodando o seguinte comando no terminal para rodar o projeto:
 
 ```bash
 npm run start
 ```
 
-Então o browser irá abrir uma porta disponível no seu brawser.
+O Browser irá abrir o projeto automaticamente em uma porta disponível.
 
 ## Tecnologias
 
