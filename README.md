@@ -6,7 +6,7 @@
 - [Instalação](#Instalação)
 - [Tecnologias](#Tecnologias)
 - [Práticas](#Práticas)
-- [Próximos Passos](#Próximos Passos)
+- [Próximos Passos](#PróximosPassos)
 - [API](#API)
 - [Figma](#UI)
 - [Desafio](#Desafio)
