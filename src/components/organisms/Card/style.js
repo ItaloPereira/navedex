@@ -110,6 +110,7 @@ export const Container = styled.div`
 
 export const LoaderWrapper = styled.div`
   position: absolute;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: center;

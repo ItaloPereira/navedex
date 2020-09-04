@@ -52,10 +52,9 @@ const reducer = (state = initialState, action) => {
       };
 
     case 'SET_RARE_NAVER_FOUND':
-      localStorage.setItem('RARE_NAVER_FOUND', payload);
       return {
         ...state,
-        rareNaverFound: payload,
+        rareNaverFound: true,
       };
 
     default:

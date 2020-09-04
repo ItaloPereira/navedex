@@ -16,6 +16,12 @@ const Card = ({ name, role, imgSrc, uid }) => {
   const [imageError, setImageError] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
 
+  function timeToSetImageLoaded() {
+    setTimeout(() => {
+      setImageLoaded(true);
+    }, 100);
+  }
+
   const { dispatch } = useContext(AppContext);
 
   function openDeleteModal() {
@@ -53,7 +59,7 @@ const Card = ({ name, role, imgSrc, uid }) => {
               className="card__img"
               src={imgSrc}
               alt="destaque"
-              onLoad={() => setImageLoaded(true)}
+              onLoad={() => timeToSetImageLoaded()}
               onError={() => setImageError(true)}
             />
 

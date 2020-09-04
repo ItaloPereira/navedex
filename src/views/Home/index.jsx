@@ -76,8 +76,9 @@ const Home = () => {
 
       dispatch({
         type: 'SET_RARE_NAVER_FOUND',
-        payload: true,
       });
+
+      localStorage.setItem('RARE_NAVER_FOUND', true);
 
     } catch (err) {
       const errorMessage = getErrorMessageByRequest(err);
@@ -88,10 +89,12 @@ const Home = () => {
   function verifyLocalStorage() {
     const rareNaverFound = localStorage.getItem('RARE_NAVER_FOUND');
 
-    dispatch({
-      type: 'SET_RARE_NAVER_FOUND',
-      payload: rareNaverFound,
-    });
+    if (rareNaverFound) {
+      dispatch({
+        type: 'SET_RARE_NAVER_FOUND',
+      });
+    }
+
   }
 
   useEffect(() => {
@@ -135,10 +138,11 @@ const Home = () => {
             </EmptyMessage>
           )}
         </NaversContainer>
+        {state.rareNaverFound}
+        {!state.rareNaverFound && (
+          <LostPicture src={lostImageSrc} alt="lost" onClick={revealTheSecret} />
+        )}
       </PageWrapper>
-      {!state.rareNaverFound && (
-        <LostPicture src={lostImageSrc} alt="lost" onClick={revealTheSecret} />
-      )}
     </Page>
   )
 }
