@@ -46,7 +46,7 @@ O Browser irá abrir o projeto automaticamente em uma porta disponível.
 - Foi criado um componente para utilização de `heads` dinâmicos. Nesse componente se utiliza o [React Helmet](https://www.npmjs.com/package/react-helmet)
   e com ele é possível alterar título, imagens de compartilhamento, meta tags entre outros.
   
-- Os Cars da Home foram desenvolvidos de uma forma que não permita ter muitas linhas de título e descrição para não acabar deixando o componente com altura excessiva (Uso da propriedade do css `line-clamp`).
+- Os Cards da Home foram desenvolvidos de uma forma que não permita ter muitas linhas de título e descrição para não acabar deixando o componente com altura excessiva (Uso da propriedade do css `line-clamp`).
 
 - Foi utilizado o [Polished](https://polished.js.org/docs/) para poder usar diferentes tons de cores sem criar novas variáveis globais de cor para fácil troca de tema se necessário.
 
