@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom';
 
 import AppContext from '@context/appContext';
 import NaversService from '@api/services/navers';
@@ -37,7 +38,6 @@ const Home = () => {
         payload: res.data,
       });
     } catch (err) {
-      console.log(err);
       const errorMessage = getErrorMessageByRequest(err);
       notifyError(errorMessage);
     } finally {
@@ -58,7 +58,9 @@ const Home = () => {
           </h1>
 
           <div className="page-header__button-wrapper">
-            <Button>Adicionar Naver</Button>
+            <Link to="/adicionar-naver">
+              <Button>Adicionar Naver</Button>
+            </Link>
           </div>
         </PageHeader>
 

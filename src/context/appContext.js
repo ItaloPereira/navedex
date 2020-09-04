@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 
 const initialState = {
   navers: [],
+  modal: {
+    isOpened: false,
+    component: null,
+  },
 };
 
 const reducer = (state = initialState, action) => {
@@ -13,6 +17,25 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         navers: payload,
+      };
+
+    case 'SET_MODAL_OPENED':
+      return {
+        ...state,
+        modal: {
+          isOpened: true,
+          options: { ...action.options },
+          component: <action.component {...action.props} />,
+        },
+      };
+
+    case 'SET_MODAL_CLOSED':
+      return {
+        ...state,
+        modal: {
+          ...state.modal,
+          isOpened: false,
+        },
       };
 
     default:

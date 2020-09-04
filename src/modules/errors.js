@@ -1,10 +1,16 @@
 export const errorMessages = {
   email: {
     required: 'E-mail obrigatório',
-    pattern: 'E-mail inválido'
+    pattern: 'E-mail inválido',
   },
   password: {
     required: 'Senha obrigatória',
+  },
+  birthdate: {
+    pattern: 'Data inválida',
+  },
+  admission_date: {
+    pattern: 'Data inválida',
   },
   defaults: {
     required: 'Campo obrigatório',
@@ -22,7 +28,7 @@ export function getErrorMessage(error) {
   const { name } = ref;
   let errorMessage = '';
 
-  if (errorMessages[name][type]) errorMessage = errorMessages[name][type];
+  if (errorMessages[name] && errorMessages[name][type]) errorMessage = errorMessages[name][type];
   else if (errorMessages.defaults[type]) errorMessage = errorMessages.defaults[type];
   else errorMessage = 'Erro no campo';
 
@@ -31,6 +37,7 @@ export function getErrorMessage(error) {
 
 export function getErrorMessageByRequest(error) {
   const { response } = error;
+  if (!response) return false;
   const { status, data } = response;
   const { message } = data;
 

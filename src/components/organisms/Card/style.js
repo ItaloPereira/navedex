@@ -61,11 +61,15 @@ export const Container = styled.div`
     &__icon-wrapper {
       font-size: 24px;
       padding-right: 8px;
-      transition: .3s;
       cursor: pointer;
 
-      :hover {
-        color: ${lighten(0.3, Primary)};
+      span {
+        color: ${Primary};
+        transition: .3s;
+
+        :hover {
+          color: ${lighten(0.3, Primary)};
+        }
       }
     }
   }

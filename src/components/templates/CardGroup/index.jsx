@@ -29,6 +29,7 @@ const CardGroup = ({ items, loading }) => {
     <Container>
       {finalItems.map(item => (
         <Card
+          uid={item.id}
           key={item.id}
           name={item.name}
           role={item.job_role}

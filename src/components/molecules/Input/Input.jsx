@@ -1,5 +1,6 @@
 import React, { useState } from 'react'; 
 import PropTypes from 'prop-types';
+import InputMask from 'react-input-mask';
 
 import { getErrorMessage } from '@modules/errors';
 
@@ -14,7 +15,7 @@ import {
   Error,
 } from './style';
 
-const Input = ({ label, placeholder, error, type }) => {
+const Input = ({ label, placeholder, error, type, mask, value }) => {
   const [passVisible, setPassVisible] = useState(false);
 
   return (
@@ -24,7 +25,9 @@ const Input = ({ label, placeholder, error, type }) => {
       )}
 
       <InputWrapper>
-        <StyledInput error={error} placeholder={placeholder} type={passVisible ? 'text' : type} />
+        <InputMask mask={mask} defaultValue={value}>
+          {(inputProps) => <StyledInput {...inputProps} error={error} placeholder={placeholder} type={passVisible ? 'text' : type} />}
+        </InputMask>
 
         {type === 'password' && (
           <IconWrapper onClick={() => setPassVisible(!passVisible)}>
@@ -43,13 +46,17 @@ Input.propTypes = {
   placeholder: PropTypes.string,
   error: PropTypes.objectOf(PropTypes.any),
   type: PropTypes.string,
+  mask: PropTypes.string,
+  value: PropTypes.string,
 };
 
 Input.defaultProps = {
   label: undefined,
   placeholder: undefined,
   error: undefined,
-  type: 'text'
+  type: 'text',
+  mask: undefined,
+  value: '',
 };
 
 export default Input;

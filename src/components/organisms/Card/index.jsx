@@ -1,12 +1,13 @@
 import React, { useState } from 'react'; 
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import Icon from '@components/atoms/Icon';
 import Loader from '@components/atoms/Loader';
 
 import { Container, LoaderWrapper } from './style';
 
-const Card = ({ name, role, imgSrc }) => {
+const Card = ({ name, role, imgSrc, uid }) => {
   const [imageError, setImageError] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -18,7 +19,6 @@ const Card = ({ name, role, imgSrc }) => {
     return `${names[0].charAt(0) + names[names.length - 1].charAt(0)}`;
   }
 
-
   return (
     <Container>
       {imageError ? (
@@ -29,7 +29,7 @@ const Card = ({ name, role, imgSrc }) => {
         <>
           <img
             className="card__img"
-            src={imgSrc} 
+            src={imgSrc}
             alt="destaque"
             onLoad={() => setImageLoaded(true)}
             onError={() => setImageError(true)}
@@ -52,7 +52,9 @@ const Card = ({ name, role, imgSrc }) => {
           <Icon name="delete" />
         </div>
         <div className="card__actions__icon-wrapper">
-          <Icon name="edit" />
+          <Link to={`/editar-naver/${uid}`}>
+            <Icon name="edit" />
+          </Link>
         </div>
       </div>
     </Container>
@@ -63,6 +65,7 @@ Card.propTypes = {
   name: PropTypes.string,
   role: PropTypes.string,
   imgSrc: PropTypes.string,
+  uid: PropTypes.string.isRequired,
 };
 
 Card.defaultProps = {
