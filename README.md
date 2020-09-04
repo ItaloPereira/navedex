@@ -43,7 +43,7 @@ Então o browser irá abrir uma porta disponível no seu brawser.
 
 ## Práticas
 
-- Foi criado um componente para utilização de <head>s dinâmicos. Nesse componente utilizasse o [React Helmet](https://www.npmjs.com/package/react-helmet)
+- Foi criado um componente para utilização de <head>s dinâmicos. Nesse componente se utiliza o [React Helmet](https://www.npmjs.com/package/react-helmet)
   e com ele é possível alterar título, imagens de compartilhamento, meta tags entre outros.
   
 - Os Cars da Home foram desenvolvidos de uma forma que não permita ter muitas linhas de título e descrição para não acabar deixando o componente com altura excessiva (Uso da propriedade do css `line-clamp`).
@@ -79,7 +79,7 @@ Encontre o Naver lendário na home. (Para resetar apague a variável `RARE_NAVER
 
 **Italo Pereira**.
 
-Me encontre no [LinkedIn](https://www.linkedin.com/in/matheus-cruz-54204b185/).
+Me encontre no [LinkedIn](https://www.linkedin.com/in/italo-pereira-59603815a/).
 
 ## Licensa
 
