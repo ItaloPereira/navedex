@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { lighten } from 'polished';
+import { lighten, darken } from 'polished';
 import { Primary, White } from '@assets/styles/colors';
 import { LabelMedium } from '@assets/styles/typography';
 
@@ -11,7 +11,7 @@ const colorSchemas = {
   },
   secondary: {
     background: White,
-    hoverBackground: lighten(0.1, White),
+    hoverBackground: darken(0.05, White),
     color: Primary,
   }
 };

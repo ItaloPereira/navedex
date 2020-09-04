@@ -17,6 +17,7 @@ import {
   PageHeader,
   NaversContainer,
   PaginationWrapper,
+  EmptyMessage,
 } from './style';
 
 const Home = () => {
@@ -78,6 +79,12 @@ const Home = () => {
             </PaginationWrapper>
           )}
 
+          {!state.navers.length && !loading && (
+            <EmptyMessage>
+              Nenhum Naver cadastrado!
+              <span role="img" aria-label="rosto triste"> 😞</span>
+            </EmptyMessage>
+          )}
         </NaversContainer>
       </PageWrapper>
     </Page>

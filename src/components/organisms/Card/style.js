@@ -9,10 +9,15 @@ export const Container = styled.div`
   width: 100%;
   position: relative;
 
+  .image-container {
+    cursor: pointer;
+  }
+
   .card__img {
     width: 100%;
     filter: grayscale(100%);
     object-fit: cover;
+    vertical-align: middle;
     height: 21.9vw;
     max-height: 437px;
   }
@@ -62,6 +67,7 @@ export const Container = styled.div`
       font-size: 24px;
       padding-right: 8px;
       cursor: pointer;
+      outline: none;
 
       span {
         color: ${Primary};

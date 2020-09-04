@@ -148,7 +148,7 @@ const Naver = () => {
                 label="Aniversário"
                 placeholder="Aniversário"
                 name="birthdate"
-                defaultValue={moment.utc(naver.birthdate).format('DD/MM/YYYY') || ""}
+                defaultValue={uid ? moment.utc(naver.birthdate).format('DD/MM/YYYY') : ""}
                 mask="99/99/9999"
                 control={control}
                 rules={{
@@ -164,7 +164,7 @@ const Naver = () => {
                 label="Data de admissão"
                 placeholder="Data de admissão"
                 name="admission_date"
-                defaultValue={moment.utc(naver.admission_date).format('DD/MM/YYYY') || ""}
+                defaultValue={uid ? moment.utc(naver.admission_date).format('DD/MM/YYYY') : ""}
                 mask="99/99/9999"
                 control={control}
                 rules={{

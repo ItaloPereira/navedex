@@ -5,10 +5,24 @@ export const Paragraph = `
   line-height: 24px;
 `;
 
+export const ParagraphBold = `
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+`;
+
 export const ParagraphLarge = `
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 16px;
+  line-height: 36px;
+`;
+
+export const ParagraphExtraLarge = `
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
   line-height: 36px;
 `;
 

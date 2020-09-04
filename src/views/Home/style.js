@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { HeadingLarge } from '@assets/styles/typography';
+import { HeadingLarge, ParagraphExtraLarge } from '@assets/styles/typography';
 
 export const PageWrapper = styled.div`
   padding: 0 32px;
@@ -28,4 +28,10 @@ export const NaversContainer = styled.div`
 
 export const PaginationWrapper = styled.div`
   margin: 32px auto 0;
+`;
+
+export const EmptyMessage = styled.span`
+  ${ParagraphExtraLarge}
+  display: block;
+  text-align: center;
 `;

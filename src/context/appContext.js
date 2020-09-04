@@ -19,6 +19,12 @@ const reducer = (state = initialState, action) => {
         navers: payload,
       };
 
+    case 'REMOVE_NAVER':
+      return {
+        ...state,
+        navers: state.navers.filter(naver => naver.id !== action.uid)
+      }
+
     case 'SET_MODAL_OPENED':
       return {
         ...state,

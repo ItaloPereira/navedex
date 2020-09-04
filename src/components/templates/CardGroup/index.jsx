@@ -37,7 +37,7 @@ const CardGroup = ({ items, loading }) => {
         />
       ))}
 
-      {loading && loader()}
+      {loading && !items.length && loader()}
     </Container>
   );
 };
