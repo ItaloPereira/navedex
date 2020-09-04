@@ -95,28 +95,6 @@ export const CloseContainer = styled.div`
   font-size: 24px;
 `;
 
-export const ActionsWrapper = styled.div`
-  display: flex;
-  width: 100%;
-  margin-top: auto;
-  font-size: 24px;
-  
-  div {
-    cursor: pointer;
-
-    &:first-child {
-      margin-right: 8px;
-    }
-
-    span {
-      transition: .3s;
-
-      &:hover {
-        color: ${lighten(0.3, Primary)};
-      }
-    }
-  }
-`
 export const NaverImg = styled.img`
   vertical-align: middle;
   filter: ${props => props.name === 'Italo Pereira' ? 'none' : 'grayscale(100%)'};
@@ -124,4 +102,13 @@ export const NaverImg = styled.img`
   vertical-align: middle;
   width: 503px;
   height: 504px;
+`;
+
+export const RareNaverTitle = styled.h1`
+  font-size: 16px;
+  font-weight: 600;
+
+  &:nth-child(2) {
+    margin-bottom: 16px;
+  }
 `;

@@ -35,3 +35,19 @@ export const EmptyMessage = styled.span`
   display: block;
   text-align: center;
 `;
+
+export const LostPicture = styled.img`
+  position: absolute;
+  right: -25px;
+  bottom: 0px;
+  width: 50px;
+  height: 50px;
+  filter: blur(5px);
+  transition: .3s;
+  cursor: pointer;
+
+  &:hover {
+    filter: blur(1.5px);
+    right: 0px;
+  }
+`;

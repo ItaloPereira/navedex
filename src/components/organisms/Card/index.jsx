@@ -35,7 +35,7 @@ const Card = ({ name, role, imgSrc, uid }) => {
   }
 
   return (
-    <Container>
+    <Container name={name}>
       <div
         onClick={openDetails}
         role="button"

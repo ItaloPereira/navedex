@@ -11,11 +11,38 @@ export const Container = styled.div`
 
   .image-container {
     cursor: pointer;
+    position: relative;
+
+    ${props => props.name === 'Italo Pereira' && `
+      &:after {
+        content: 'LENDÁRIO';
+        width: 100px;
+        height: 40px;
+        background: linear-gradient(45deg,#F17C58,#E94584,#24AADB,#27DBB1,#FFDC18,#FF3706);
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: 600% 100%;
+        animation: gradient 16s linear infinite;
+        animation-direction: alternate;
+        color: ${White};
+        font-weight: 600;
+        text-shadow: 1px 1px 10px rgba(145, 150, 150, 1);
+      }
+    `}
+  }
+
+  @keyframes gradient {
+    0% {background-position: 0%}
+    100% {background-position: 100%}
   }
 
   .card__img {
     width: 100%;
-    filter: grayscale(100%);
+    filter: ${props => props.name === 'Italo Pereira' ? 'none' : 'grayscale(100%)'};
     object-fit: cover;
     vertical-align: middle;
     height: 21.9vw;

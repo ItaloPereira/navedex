@@ -1,12 +1,10 @@
 import React, { useContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useHistory } from 'react-router-dom';
 
 import AppContext from '@context/appContext';
 import { getAge, getDateRange } from '@utils/date';
 
 import Icon from '@components/atoms/Icon';
-import DeleteNaver from '@components/templates/Modals/DeleteNaver';
 
 import { DefaultModalContent, Title } from '../style';
 
@@ -15,27 +13,17 @@ import {
   DetailsInfo,
   CloseContainer,
   NaverImg,
-  ActionsWrapper,
+  RareNaverTitle,
 } from './style';
 
-const NaverDetailsModal = ({ uid }) => {
+const RareNaverModal = ({ uid }) => {
   const { state, dispatch } = useContext(AppContext);
   const naver = state.navers.find(naver_ => naver_.id === uid);
   
   const [imageError, setImageError] = useState(false);
-  const history = useHistory();
 
   function closeModal() {
     return dispatch({ type: 'SET_MODAL_CLOSED' });
-  }
-
-  function openDeleteModal() {
-    return dispatch({ type: 'SET_MODAL_OPENED', component: DeleteNaver, props: { uid: naver.id } });
-  }
-
-  function goToEdit() {
-    history.push(`/editar-naver/${uid}`);
-    closeModal();
   }
 
   function getInitials() {
@@ -74,6 +62,8 @@ const NaverDetailsModal = ({ uid }) => {
             </div>
             <DetailsInfo>
               <header>
+                <RareNaverTitle>Parabéns! Você desbloqueou o Naver Lendário!</RareNaverTitle>
+                <RareNaverTitle>Encontreo no seu Navedex!</RareNaverTitle>
                 <Title>{naver.name}</Title>
                 <p>{naver.job_role}</p>
               </header>
@@ -97,24 +87,6 @@ const NaverDetailsModal = ({ uid }) => {
                   </li>
                 )}
               </ul>
-              <ActionsWrapper>
-                <div
-                  onClick={openDeleteModal}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={() => {}}
-                >
-                  <Icon name="delete" onClick={openDeleteModal} />
-                </div>
-                <div
-                  onClick={goToEdit}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={() => {}}
-                >
-                  <Icon name="edit" onClick={goToEdit} />
-                </div>
-              </ActionsWrapper>
             </DetailsInfo>
           </>
         )}
@@ -123,8 +95,8 @@ const NaverDetailsModal = ({ uid }) => {
   );
 };
 
-NaverDetailsModal.propTypes = {
+RareNaverModal.propTypes = {
   uid: PropTypes.string.isRequired,
 };
 
-export default NaverDetailsModal;
+export default RareNaverModal;

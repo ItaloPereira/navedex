@@ -7,6 +7,7 @@ const initialState = {
     isOpened: false,
     component: null,
   },
+  rareNaverFound: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -17,6 +18,12 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         navers: payload,
+      };
+
+    case 'ADD_NAVER':
+      return {
+        ...state,
+        navers: [ payload, ...state.navers ],
       };
 
     case 'REMOVE_NAVER':
@@ -42,6 +49,13 @@ const reducer = (state = initialState, action) => {
           ...state.modal,
           isOpened: false,
         },
+      };
+
+    case 'SET_RARE_NAVER_FOUND':
+      localStorage.setItem('RARE_NAVER_FOUND', payload);
+      return {
+        ...state,
+        rareNaverFound: payload,
       };
 
     default:
