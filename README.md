@@ -73,7 +73,7 @@ Econtre o layout do Figma nesse [link](https://www.figma.com/file/II8UDFm2uJFZaD
 
 ## Desafio
 
-Encontre o Naver lendário na home. (Para resetar apague a variável `RARE_NAVER_FOUND` encontrada no Local Storage).
+Encontre o Naver lendário que está escondido em algum lugar na home. (Para resetar apague a variável `RARE_NAVER_FOUND` encontrada no Local Storage).
 
 ## Autor
 
