@@ -54,7 +54,7 @@ O Browser irá abrir o projeto automaticamente em uma porta disponível.
 
 ## Features
 
-Possíveis features a se considerar são:
+Possíveis futuras features a se considerar são:
 
 - Telas Mobile.
 - Página de registro.
