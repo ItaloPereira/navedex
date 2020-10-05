@@ -1,68 +1,86 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# NaveDex
 
-## Available Scripts
+# Sumário
 
-In the project directory, you can run:
+- [Descrição](#Descrição)
+- [Instalação](#Instalação)
+- [Tecnologias](#Tecnologias)
+- [Práticas](#Práticas)
+- [Features](#Features)
+- [API](#API)
+- [Figma](#UI)
+- [Desafio](#Desafio)
+- [Autor](#Autor)
+- [Licensa](#Licensa)
 
-### `npm start`
+## Descrição
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+O propósito desde projeto consiste em desenvolver uma plataforma onde você poderá entrar em sua conta, ver, editar, deletar e criar Navers.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+O padrão de estrutura utilizado foi o [Atomic Design](https://atomicdesign.bradfrost.com/) visando a escalabilidade e manutenabilidade.
 
-### `npm test`
+## Instalação
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Primeiro, comece rodando o seguinte comando no terminal para rodar o projeto:
 
-### `npm run build`
+```bash
+npm run start
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+O Browser irá abrir o projeto automaticamente em uma porta disponível.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Tecnologias
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [ReactJS](https://reactjs.org/)
+- [Axios](https://github.com/axios/axios)
+- [Styled Components](https://styled-components.com/)
+- [PropTypes](https://www.npmjs.com/package/prop-types)
+- [React Hook Form](http://react-hook-form.com/)
+- [ContextAPI](https://reactjs.org/docs/context.html)
+- [React Hooks](https://reactjs.org/docs/hooks-intro.html)
+- [Polished](https://polished.js.org/docs/)
+- [React Helmet](https://www.npmjs.com/package/react-helmet)
 
-### `npm run eject`
+## Práticas
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Foi criado um componente para utilização de `heads` dinâmicos. Nesse componente se utiliza o [React Helmet](https://www.npmjs.com/package/react-helmet)
+  e com ele é possível alterar título, imagens de compartilhamento, meta tags entre outros.
+  
+- Os Cards da Home foram desenvolvidos de uma forma que não permita ter muitas linhas de título e descrição para não acabar deixando o componente com altura excessiva (Uso da propriedade do css `line-clamp`).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Foi utilizado o [Polished](https://polished.js.org/docs/) para poder usar diferentes tons de cores sem criar novas variáveis globais de cor para fácil troca de tema se necessário.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- As mensagens de erro foram centralizadas em um único arquivo para não haver mensagens de erro duplicadas e aumentar a facilidade na hora de criar novas.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Features
 
-## Learn More
+Possíveis futuras features a se considerar são:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Telas Mobile.
+- Página de registro.
+- Documentação de componentes.
+- Docker.
+- Centralização de textos e funcionalidade multi-idiomas com i18n.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## API
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+Encontre a coleção do Postman contendo a API nesse [link](https://www.getpostman.com/collections/e6afe4028c2a1e56e577).
 
-### Analyzing the Bundle Size
+## UI
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Econtre o layout do Figma nesse [link](https://www.figma.com/file/II8UDFm2uJFZaD0FOPcinP/Teste-Fornt-End).
 
-### Making a Progressive Web App
+## Desafio
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Encontre o Naver lendário que está escondido em algum lugar na home. (Para resetar apague a variável `RARE_NAVER_FOUND` encontrada no Local Storage).
 
-### Advanced Configuration
+## Autor
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+**Italo Pereira**.
 
-### Deployment
+Me encontre no [LinkedIn](https://www.linkedin.com/in/italo-pereira-59603815a/).
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Licensa
 
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Esse projeto foi feito usando a [MIT License](https://github.com/matheus-neves/navedex/blob/master/LICENSE.md).
